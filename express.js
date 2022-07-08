@@ -1,4 +1,4 @@
-// express.js tut
+// express.js tut - npm install express
 
 const express = require("express");
 const app = express();
@@ -28,5 +28,5 @@ app.get("/about-us", (req, res) => {
 // error or 404
 
 app.use((req, res) => {
-  res.sendFile("./html/error.html", { root: __dirname });
+  res.status(404).sendFile("./html/error.html", { root: __dirname });
 });
