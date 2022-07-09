@@ -7,6 +7,9 @@ const app = express();
 // setting up the view engine - ejs
 app.set("view engine", "ejs");
 
+// if we change the name of the 'views' folder
+// app.set('views', 'newFolderName')
+
 // listens for request
 
 app.listen(3000, "localhost", () => {
