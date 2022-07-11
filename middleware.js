@@ -35,8 +35,13 @@ app.use((req, res, next) => {
   next();
 });
 
-// morgan middleware - used to log out details of the request
+// 'morgan' middleware - used to log out details of the request
+
 app.use(morgan("dev")); // read more on the documentation of npm
+
+// 'static' middleware to be make use of static files on browser
+
+app.use(express.static("public"));
 
 // routing
 
