@@ -22,7 +22,7 @@ app.use(express.static("public"));
 
 // connecting to mongo db
 const dbURI =
-  "mongodb+srv://<username>:<password>@<clustername>.fbb80.mongodb.net/<databasename>?retryWrites=true&w=majority";
+  "mongodb+srv://shelby:shelby101@cluster0.fbb80.mongodb.net/nodetuts?retryWrites=true&w=majority";
 
 mongoose
   .connect(dbURI)
