@@ -1,0 +1,63 @@
+// importing mongoose
+const mongoose = require("mongoose");
+
+// importing the mongodb model and schema
+const Blog = require("./models/blog");
+
+// connecting to mongo db
+const dbURI =
+  "mongodb+srv://shelby:shelby101@cluster0.fbb80.mongodb.net/nodetuts?retryWrites=true&w=majority";
+
+mongoose
+  .connect(dbURI)
+  .then(() => {
+    app.listen(3000, "localhost", () => {
+      // listens for request only when connection to db is made
+      console.log("listening");
+    });
+  })
+  .catch((err) => console.log(err));
+
+// saving data into mongo db
+  const blog = new Blog({
+    title: "lolita",
+    snippet: "it is written by vladmir nabokov",
+    body: "russian literature",
+  });
+
+  blog
+    .save()
+    .then((result) => {
+      ..
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+// getting all the data
+  Blog.find()
+    .then((result) => {
+      ..
+    })
+    .catch((err) => {
+      ..
+    });
+
+// finding data by id
+  Blog.findById("62ceca2f82a1c7b73a9b9783")
+    .then((result) => {
+      ..
+    })
+    .catch((err) => {
+      ..
+    });
+
+// sorting by field name
+  Blog.find()
+    .sort({ createdAt: -1 }) // -1 for descending
+    .then((result) => {
+      ..
+    })
+    .catch((err) => {
+      ..
+    });
